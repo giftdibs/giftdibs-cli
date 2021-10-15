@@ -1,0 +1,15 @@
+{
+  "name": "@giftdibs/cli",
+  "version": "0.0.1",
+  "main": "lib/cli.js",
+  "bin": {
+    "gd": "./bin/gd.js"
+  },
+  "devDependencies": {
+    "fs-extra": "10.0.0",
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "cross-spawn": "7.0.3"
+  }
+}
