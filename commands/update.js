@@ -42,12 +42,14 @@ function updateDependencies(dependencies) {
 }
 
 module.exports = function (_args) {
-  const angularVersion = '^12';
+  const angularVersion = '^13';
+  const angularEslintVersion = '^13.0.0-0';
+  const giftdibsVersion = '^13.0.0-0';
 
   updateDependencies({
     '@angular/cli': angularVersion,
     '@angular/core': angularVersion,
-    '@angular-eslint/schematics': angularVersion,
+    '@angular-eslint/schematics': angularEslintVersion,
   });
 
   const schematicsPackageJson = fs.readJsonSync(
@@ -61,15 +63,20 @@ module.exports = function (_args) {
   updateDependencies(schematicsPackageJson.dependencies);
 
   updateDependencies({
-    '@angular-eslint/builder': angularVersion,
-    '@angular-eslint/eslint-plugin': angularVersion,
-    '@angular-eslint/eslint-plugin-template': angularVersion,
-    '@angular-eslint/template-parser': angularVersion,
+    '@angular-eslint/builder': angularEslintVersion,
+    '@angular-eslint/eslint-plugin': angularEslintVersion,
+    '@angular-eslint/eslint-plugin-template': angularEslintVersion,
+    '@angular-eslint/template-parser': angularEslintVersion,
     eslint: '^7',
   });
 
   updateDependencies({
     prettier: '^2',
+  });
+
+  updateDependencies({
+    '@giftdibs/ux': giftdibsVersion,
+    '@giftdibs/session': giftdibsVersion,
   });
 
   hardenPackageDependencies();
